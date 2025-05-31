@@ -1,0 +1,3 @@
+[submodule "C/LIBCMT"]
+	path = C/LIBCMT
+	url = https://github.com/TeomanDeniz/LIBCMT
