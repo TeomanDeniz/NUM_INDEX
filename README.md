@@ -23,7 +23,7 @@ This project provides implementations of the `NUM_INDEX` function in various pro
 ### Pascal
 - **File**: `num_index.pas`
 - **Compile**: Use FreePascal or Turbo Pascal.
-- **Usage**: `NumIndex(number, index): Integer`. Call from `main` or other functions.
+- **Usage**: `NUM_INDEX(number, index): Integer`. Call from `main` or other functions.
 
 ### BASIC
 - **File**: `num_index.bas`
