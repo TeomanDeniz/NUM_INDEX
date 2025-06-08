@@ -7,7 +7,7 @@ This project provides implementations of the `NUM_INDEX` function in various pro
 
 ### C/C++
 - **File**: [`C/NUM_INDEX.c`](https://github.com/TeomanDeniz/NUM_INDEX/blob/main/C/NUM_INDEX.c)
-- **Build**: Use any C89+ compatible compiler.
+- **Build**: Every. If your compiler knows C Syntax, you can even able to compile it in your toaster machine.
 - **Usage**: Call `NUM_INDEX(number, index)` as a function. Works with both K&R and ANSI C via `#ifdef KNR_STYLE`.
 
 ### JavaScript
