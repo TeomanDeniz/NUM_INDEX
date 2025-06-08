@@ -8,7 +8,7 @@
 # +.....................++.....................+ #   :!:: :!:!1:!:!::1:::!!!:  #
 # : C - Maximum Tension :: Create - 2025/05/30 : #   ::!::!!1001010!:!11!!::   #
 # :---------------------::---------------------: #   :!1!!11000000000011!!:    #
-# : License - MIT       :: Update - 2025/05/31 : #    ::::!!!1!!1!!!1!!!::     #
+# : License - MIT       :: Update - 2025/06/08 : #    ::::!!!1!!1!!!1!!!::     #
 # +.....................++.....................+ #       ::::!::!:::!::::      #
 \******************************************************************************/
 
@@ -38,6 +38,9 @@
 #include "LIBCMT/ATTRIBUTES/REGPARM.h" /*
 # define REGPARM()
 #        */
+#include "LIBCMT/KEYWORDS/LOCAL.h" /*
+# define LOCAL
+#        */
 /* **************************** [^] INCLUDES [^] **************************** */
 
 /* *************************** [v] C++ (PUSH) [v] *************************** */
@@ -56,7 +59,28 @@ char REGPARM(2)
 	register short	INDEX;
 #endif /* !KNR_STYLE */
 {
-	register unsigned short	NUMBER_SIZE;
+	register unsigned short		NUMBER_SIZE;
+	static LOCAL const long		TEN_POWERS[19] = { // TODO: LOCAL
+		(long)1, /* GENERALLY IGNORED */
+		(long)10,
+		(long)100,
+		(long)1000,
+		(long)10000,
+		(long)100000,
+		(long)1000000,
+		(long)10000000,
+		(long)100000000,
+		(long)1000000000,
+		(long)10000000000,
+		(long)100000000000,
+		(long)1000000000000,
+		(long)10000000000000,
+		(long)100000000000000,
+		(long)1000000000000000,
+		(long)10000000000000000,
+		(long)100000000000000000,
+		(long)1000000000000000000 /* MAX LONG */
+	};
 
 	if (NUMBER < (long)0)
 		NUMBER = ((~NUMBER) + (long)1);
@@ -89,18 +113,7 @@ char REGPARM(2)
 	if (INDEX >= NUMBER_SIZE)
 		return (-1);
 
-	{
-		register unsigned short	POSITION;
-
-		POSITION = (NUMBER_SIZE - INDEX) - 1;
-
-		while (POSITION > 0)
-		{
-			NUMBER = NUMBER / (long)10;
-			--POSITION;
-		}
-	}
-
+	NUMBER = NUMBER / TEN_POWERS[(NUMBER_SIZE - INDEX) - 1];
 	return ((char)(NUMBER - (NUMBER / 10) * 10));
 }
 

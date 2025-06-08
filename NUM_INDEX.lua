@@ -19,6 +19,11 @@ function
 
 	INDEX = INDEX - 1
 
+	if (INDEX < 0)
+	then
+		return (-1)
+	end
+
 	if (NUMBER < 0)
 	then
 		NUMBER = -NUMBER
@@ -28,10 +33,10 @@ function
 	then
 		if (INDEX == 0)
 		then
-			return (0);
+			return (0)
 		end
 
-		return (-1);
+		return (-1)
 	end
 
 	do

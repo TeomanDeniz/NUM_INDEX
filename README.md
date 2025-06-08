@@ -1,11 +1,46 @@
 # NUM_INDEX
 
-This repo is about a function on multiple programing languages
+This project provides implementations of the `NUM_INDEX` function in various programming languages.  
+`NUM_INDEX(NUMBER, INDEX)` returns the digit at the specified index of a number, from left to right.
 
-Please pull with:
+## Supported Languages
 
-```sh
-git clone --recurse-submodules --depth 1 "git@github.com:TeomanDeniz/NUM_INDEX.git"
-```
+### C/C++
+- **File**: `num_index.c`
+- **Build**: Use any C89+ compatible compiler.
+- **Usage**: Call `NUM_INDEX(number, index)` as a function. Works with both K&R and ANSI C via `#ifdef KNR_STYLE`.
 
+### JavaScript
+- **File**: `num_index.js`
+- **Run**: Node.js or browser console.
+- **Usage**: `NUM_INDEX(number, index)` returns the digit at the index.
 
+### Lua
+- **File**: `num_index.lua`
+- **Run**: With any Lua interpreter.
+- **Usage**: `NUM_INDEX(number, index)` where `index` starts from 1 (adjusted internally by subtracting 1).
+
+### Pascal
+- **File**: `num_index.pas`
+- **Compile**: Use FreePascal or Turbo Pascal.
+- **Usage**: `NumIndex(number, index): Integer`. Call from `main` or other functions.
+
+### BASIC
+- **File**: `num_index.bas`
+- **Run**: In QB64, FreeBASIC, or compatible interpreter.
+- **Usage**: `NUM_INDEX(number, index)` returns the digit.
+
+### COBOL
+- **File**: `num_index.cob`
+- **Compile**: With GnuCOBOL or similar.
+- **Usage**: Set `NUM_INDEX_NUMBER` and `NUM_INDEX_INDEX`, then `PERFORM NUM_INDEX`.
+
+## Return Behavior
+- Returns `-1` if index is out of range.
+- Supports negative input numbers (digit extraction still works as if positive).
+- Index starts from leftmost digit as index `0`.
+
+## Notes
+- Lua internally adjusts `index = index - 1` to match 0-based logic.
+- COBOL uses `EXIT.` to exit early and stores the result in `NUM_INDEX_RESULT`.
+- Pascal version uses `Exit(value)` instead of `Result` for compatibility.
