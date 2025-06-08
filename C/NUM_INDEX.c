@@ -25,7 +25,7 @@
 
 /* *************************** [v] MVS LINKER [v] *************************** */
 /* **** MVS LINKER DOES NOT SUPPORT EXTERNAL NAMES LARGER THAN 8 BYTES!! **** */
-// NOTE: TARGETING IBM MAINFRAME SYSTEMS (Z/OS)
+/* NOTE: TARGETING IBM MAINFRAME SYSTEMS (Z/OS) */
 #	ifdef __MVS__
 #		pragma map(NUM_INDEX, "NUMINDEX")
 #	endif /* __MVS__ */
@@ -60,7 +60,7 @@ char REGPARM(2)
 #endif /* !KNR_STYLE */
 {
 	register unsigned short		NUMBER_SIZE;
-	static LOCAL const long		TEN_POWERS[19] = { // TODO: LOCAL
+	static LOCAL const long		TEN_POWERS[19] = {
 		(long)1, /* GENERALLY IGNORED */
 		(long)10,
 		(long)100,
